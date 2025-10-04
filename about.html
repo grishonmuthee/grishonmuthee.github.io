@@ -1,1 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Grishon Muthee</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* HEADER (same as index.html) */
+    header {
+      background: #111;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: #00c6ff;
+    }
+
+    main {
+      flex: 1;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      box-sizing: border-box;
+    }
+
+    h2 {
+      color: #0072ff;
+      border-bottom: 2px solid #0072ff;
+      display: inline-block;
+      margin-bottom: 1.2rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    .experience, .education, .certifications, .skills {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .job {
+      margin-bottom: 1.5rem;
+    }
+
+    .job h3 {
+      color: #0072ff;
+      margin: 0;
+    }
+
+    .job p {
+      margin: 0.3rem 0;
+      color: #555;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+      color: #444;
+    }
+
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: auto;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      main {
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Grishon Muthee</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ABOUT -->
+    <section class="about">
+      <h2>About Me</h2>
+      <p>
+        I'm <strong>Grishon Muthee</strong>, a <strong>Cybersecurity Specialist</strong> with an academic foundation in Engineering. 
+        I bring hands-on experience in Penetration Testing, Web Security, Linux and Windows Security, Python Programming, 
+        Malware Analysis, Network Technologies, and SIEM. 
+      </p>
+      <p>
+        I hold multiple certifications across cybersecurity domains and have earned recognition as a top <strong>Capture The Flag (CTF)</strong> solver, ranking 
+        within the <strong>top 5% globally</strong> on platforms such as TryHackMe, PicoCTF, HackTheBox, and Root-me.
+      </p>
+      <p>
+        My expertise includes configuring and leveraging security tools, performing malware analysis, executing physical and network security assessments, 
+        and analyzing threat intelligence data to identify emerging vulnerabilities and cyber threats.
+      </p>
+      <p><strong>📞 +254748033318 | 📧 mutheegrishon18@gmail.com</strong></p>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="experience">
+      <h2>Experience</h2>
+
+      <div class="job">
+        <h3>Levian Technologies — Cyber Security Specialist</h3>
+        <p><em>Mar 2021 – Sep 2025</em></p>
+        <ul>
+          <li>Monitored network traffic and investigated security incidents.</li>
+          <li>Configured firewalls, IDS/IPS, and endpoint protection systems.</li>
+          <li>Performed penetration testing and vulnerability assessments.</li>
+          <li>Analyzed threat intelligence to identify emerging cyber threats.</li>
+          <li>Conducted malware analysis and configured Linux and Windows security controls.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h3>PhantomNet Security — Cyber Security Analyst</h3>
+        <p><em>Dec 2019 – Feb 2021</em></p>
+        <ul>
+          <li>Performed penetration tests and improved client security by 17%.</li>
+          <li>Implemented security policies and ensured compliance with standards.</li>
+          <li>Monitored incidents using SIEM tools and delivered security awareness training.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h3>TechSecure Innovations — Junior Cybersecurity Consultant</h3>
+        <p><em>Jan 2019 – Dec 2019</em></p>
+        <ul>
+          <li>Assisted with audits and vulnerability assessments for clients.</li>
+          <li>Helped implement firewalls, IDS, and antivirus solutions.</li>
+          <li>Developed incident response plans and conducted simulations.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h3>Nexora Support Solutions — Customer Support Manager</h3>
+        <p><em>Feb 2018 – Nov 2018</em></p>
+        <ul>
+          <li>Led and managed multi-channel customer support teams.</li>
+          <li>Analyzed customer data to improve support efficiency.</li>
+          <li>Managed ticketing systems including Zendesk and Zoho.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="education">
+      <h2>Education</h2>
+      <p><strong>Kenyatta University</strong> — Bachelor of Science in Aerospace Engineering (Graduated Dec 2021)</p>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section class="certifications">
+      <h2>Certificates</h2>
+      <ul>
+        <li>Systems Security Certified Practitioner (SSCP) – MindLuster</li>
+        <li>Network Defense Essentials (NDE) – EC-Council</li>
+        <li>Digital Forensics Essentials – EC-Council</li>
+        <li>Networking – Cisco</li>
+        <li>Ethical Hacking Essentials – EC-Council</li>
+        <li>Junior Cybersecurity Analyst – Cisco</li>
+      </ul>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>Ethical Hacking, Penetration Testing, and Vulnerability Assessment</li>
+        <li>Python Programming and Automation</li>
+        <li>Network Security, Endpoint Protection, and SOC Operations</li>
+        <li>Malware Analysis and Computer Forensics</li>
+        <li>Threat & Vulnerability Management</li>
+        <li>Security Information and Event Management (SIEM)</li>
+        <li>Linux and Windows Security Administration</li>
+        <li>Cloud Computing and Incident Response</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Grishon Muthee | 
+      <a href="https://github.com/grishonmuthee" target="_blank" style="color:#00c6ff;">GitHub</a>
+    </p>
+  </footer>
+</body>
+</html>
 
