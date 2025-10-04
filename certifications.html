@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Certifications | Grishon Muthee</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css" />
   <style>
     body {
       font-family: system-ui, sans-serif;
       margin: 0;
-      background: #f9f9f9;
+      background: #f9fafb;
       color: #333;
     }
 
+    /* HEADER (same as index.html) */
     header {
       background: #111;
       color: #fff;
@@ -50,22 +51,61 @@
     }
 
     main {
-      padding: 3rem 2rem;
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    h2 {
+      color: #0072ff;
+      border-bottom: 2px solid #0072ff;
+      display: inline-block;
+      margin-bottom: 2rem;
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
     }
 
     .cert-card {
-      background: white;
-      padding: 1.5rem;
+      background: #fff;
       border-radius: 12px;
+      padding: 1.5rem;
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      margin-bottom: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
 
     .cert-card h3 {
       color: #0072ff;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
+      font-size: 1.2rem;
+    }
+
+    .cert-card p {
+      color: #555;
+      margin-bottom: 0.8rem;
+    }
+
+    .cert-card a {
+      display: inline-block;
+      background: linear-gradient(135deg, #0072ff, #00c6ff);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      transition: background 0.3s;
+    }
+
+    .cert-card a:hover {
+      background: linear-gradient(135deg, #005de0, #00a7e0);
     }
 
     footer {
@@ -73,7 +113,7 @@
       color: #aaa;
       text-align: center;
       padding: 1.5rem;
-      margin-top: 2rem;
+      margin-top: 3rem;
     }
   </style>
 </head>
@@ -94,34 +134,69 @@
   <main>
     <h2>Certifications</h2>
 
-    <div class="cert-card">
-      <h3>Systems Security Certified Practitioner (SSCP)</h3>
-      <p>MindLuster — Comprehensive foundation in access controls, cryptography, and security operations.</p>
-    </div>
+    <div class="cert-grid">
+      <!-- CERTIFICATION 1 -->
+      <div class="cert-card">
+        <h3>Systems Security Certified Practitioner (SSCP)</h3>
+        <p>MindLuster — Core principles of access control, cryptography, and network security.</p>
+        <a href="https://example.com/sscp-cert" target="_blank">View Certificate</a>
+      </div>
 
-    <div class="cert-card">
-      <h3>Network Defense Essentials (NDE)</h3>
-      <p>EC-Council — Core understanding of network defense, firewalls, and IDS configurations.</p>
-    </div>
+      <!-- CERTIFICATION 2 -->
+      <div class="cert-card">
+        <h3>Network Defense Essentials (NDE)</h3>
+        <p>EC-Council — Defensive network security fundamentals and attack prevention strategies.</p>
+        <a href="https://example.com/nde-cert" target="_blank">View Certificate</a>
+      </div>
 
-    <div class="cert-card">
-      <h3>Digital Forensics Essentials</h3>
-      <p>EC-Council — Focus on evidence acquisition, analysis, and chain of custody principles.</p>
-    </div>
+      <!-- CERTIFICATION 3 -->
+      <div class="cert-card">
+        <h3>Digital Forensics Essentials</h3>
+        <p>EC-Council — Evidence collection, forensic analysis, and chain-of-custody principles.</p>
+        <a href="https://example.com/forensics-cert" target="_blank">View Certificate</a>
+      </div>
 
-    <div class="cert-card">
-      <h3>Networking</h3>
-      <p>Cisco — Covered LAN/WAN technologies, routing, switching, and network troubleshooting.</p>
-    </div>
+      <!-- CERTIFICATION 4 -->
+      <div class="cert-card">
+        <h3>Networking</h3>
+        <p>Cisco — Comprehensive understanding of routing, switching, and IP addressing.</p>
+        <a href="https://example.com/networking-cert" target="_blank">View Certificate</a>
+      </div>
 
-    <div class="cert-card">
-      <h3>Ethical Hacking Essentials</h3>
-      <p>EC-Council — Practical ethical hacking and penetration testing methodologies.</p>
-    </div>
+      <!-- CERTIFICATION 5 -->
+      <div class="cert-card">
+        <h3>Ethical Hacking Essentials</h3>
+        <p>EC-Council — Ethical hacking and vulnerability assessment methodologies.</p>
+        <a href="https://example.com/ethical-hacking-cert" target="_blank">View Certificate</a>
+      </div>
 
-    <div class="cert-card">
-      <h3>Junior Cybersecurity Analyst</h3>
-      <p>Cisco — Focused on SOC operations, threat detection, and response fundamentals.</p>
+      <!-- CERTIFICATION 6 -->
+      <div class="cert-card">
+        <h3>Junior Cybersecurity Analyst</h3>
+        <p>Cisco — Threat detection, SOC fundamentals, and incident response skills.</p>
+        <a href="https://example.com/jr-analyst-cert" target="_blank">View Certificate</a>
+      </div>
+
+      <!-- CERTIFICATION 7 -->
+      <div class="cert-card">
+        <h3>Python for Cybersecurity</h3>
+        <p>TryHackMe — Python scripting, automation, and exploit development.</p>
+        <a href="https://example.com/python-cyber-cert" target="_blank">View Certificate</a>
+      </div>
+
+      <!-- CERTIFICATION 8 -->
+      <div class="cert-card">
+        <h3>Malware Analysis Fundamentals</h3>
+        <p>EC-Council — Behavioral and static analysis of malicious software.</p>
+        <a href="https://example.com/malware-analysis-cert" target="_blank">View Certificate</a>
+      </div>
+
+      <!-- CERTIFICATION 9 -->
+      <div class="cert-card">
+        <h3>Capture The Flag (CTF) Top 5% Global Ranking</h3>
+        <p>TryHackMe / HackTheBox — Demonstrated advanced problem-solving and cyber defense skills.</p>
+        <a href="https://example.com/ctf-ranking" target="_blank">View Details</a>
+      </div>
     </div>
   </main>
 
