@@ -5,28 +5,151 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Grishon Muthee | Portfolio</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      color: #333;
+      background: #fafafa;
+    }
+
+    header {
+      background: #111;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: #00c6ff;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 6rem 2rem;
+      background: linear-gradient(135deg, #0072ff, #00c6ff);
+      color: white;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.7rem 1.4rem;
+      background: white;
+      color: #0072ff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #e0e0e0;
+    }
+
+    .projects-preview {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .projects-preview h3 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    .project-card a {
+      text-decoration: none;
+      color: #0072ff;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #111;
+      color: #aaa;
+    }
+  </style>
 </head>
 <body>
   <header>
+    <h1>Grishon Muthee</h1>
     <nav>
-      <h1>Grishon Muthee</h1>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="about.html">About</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <section class="hero">
-    <h2>Hi, I'm Grishon </h2>
-    <p>Software Developer | Data Enthusiast | Open Source Contributor</p>
+    <h2>Hi, I'm Grishon 👋</h2>
+    <p>Software Developer • Data Enthusiast • Open Source Contributor</p>
     <a href="projects.html" class="btn">View My Work</a>
   </section>
 
+  <section class="projects-preview">
+    <h3>Recent Projects</h3>
+    <div class="project-card">
+      <h4><a href="https://github.com/grishonmuthee/project1" target="_blank">Project One</a></h4>
+      <p>A brief description of your first project goes here.</p>
+    </div>
+    <div class="project-card">
+      <h4><a href="https://github.com/grishonmuthee/project2" target="_blank">Project Two</a></h4>
+      <p>A short blurb about your second project.</p>
+    </div>
+    <a href="projects.html" class="btn">See All Projects</a>
+  </section>
+
   <footer>
-    <p>© 2025 Grishon Muthee | <a href="https://github.com/grishonmuthee">GitHub</a></p>
+    <p>© 2025 Grishon Muthee | 
+      <a href="https://github.com/grishonmuthee" target="_blank" style="color:#00c6ff;">GitHub</a>
+    </p>
   </footer>
 </body>
 </html>
