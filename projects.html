@@ -1,42 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | Grishon Muthee</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #111;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00c6ff;
+    }
+
+    /* MAIN SECTION */
+    main {
+      flex: 1;
+      max-width: 1000px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      box-sizing: border-box;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    /* PROJECT CARDS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    .project-card h3 {
+      margin: 0 0 0.5rem 0;
+      color: #0072ff;
+    }
+
+    .project-card p {
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: auto;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+      }
+
+      main {
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
+    <h1>Grishon Muthee</h1>
     <nav>
-      <h1>Projects</h1>
       <ul>
         <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
         <li><a href="about.html">About</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section id="projects"></section>
+    <h2>My Projects</h2>
+    <div class="projects-grid" id="projects"></div>
   </main>
 
+  <footer>
+    <p>© 2025 Grishon Muthee</p>
+  </footer>
+
   <script>
+    // Fetch and show GitHub repositories
     fetch('https://api.github.com/users/grishonmuthee/repos')
       .then(res => res.json())
       .then(data => {
         const container = document.getElementById('projects');
-        data.forEach(repo => {
-          const div = document.createElement('div');
-          div.innerHTML = `
-            <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
-            <p>${repo.description || 'No description available.'}</p>
-          `;
-          container.appendChild(div);
-        });
+        data
+          .filter(repo => !repo.fork)
+          .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
+          .forEach(repo => {
+            const div = document.createElement('div');
+            div.className = 'project-card';
+            div.innerHTML = `
+              <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
+              <p>${repo.description || 'No description available.'}</p>
+            `;
+            container.appendChild(div);
+          });
+      })
+      .catch(err => {
+        document.getElementById('projects').innerHTML = '<p>Unable to load projects right now.</p>';
+        console.error(err);
       });
   </script>
 </body>
 </html>
-
