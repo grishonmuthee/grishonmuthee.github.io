@@ -1,11 +1,11 @@
-# 🌐 Grishon Muthee | Cybersecurity Portfolio
+#  Grishon Muthee | Cybersecurity Portfolio
 
 Welcome to my **personal portfolio website**, built to showcase my experience, skills, and achievements in **cybersecurity**.  
 The site is hosted with **GitHub Pages** at [https://grishonmuthee.github.io](https://grishonmuthee.github.io).
 
 ---
 
-## 👨‍💻 About Me
+## About Me
 
 I’m **Grishon Muthee**, a **Cybersecurity Specialist** with an engineering foundation and hands-on experience in:
 
@@ -20,13 +20,13 @@ I rank in the **top 5% globally** on CTF platforms including **TryHackMe, PicoCT
 
 ---
 
-## 🚀 Website Overview
+##  Website Overview
 
 This portfolio presents my professional work and personal accomplishments in an elegant, responsive design.
 
-**🔗 Live Site:** [https://grishonmuthee.github.io](https://grishonmuthee.github.io)
+** Live Site:** [https://grishonmuthee.github.io](https://grishonmuthee.github.io)
 
-### 🗂 Pages
+###  Pages
 | Page | Description |
 |------|--------------|
 | `index.html` | Landing page and personal introduction |
@@ -37,7 +37,7 @@ This portfolio presents my professional work and personal accomplishments in an 
 
 ---
 
-## 🛠️ Built With
+##  Built With
 - **HTML5** – Semantic structure  
 - **CSS3 / Tailwind-inspired styling** – Clean, responsive design  
 - **JavaScript** – For interactivity (optional)  
@@ -45,7 +45,7 @@ This portfolio presents my professional work and personal accomplishments in an 
 
 ---
 
-## 🧾 Certifications
+## Certifications
 - Systems Security Certified Practitioner (**SSCP**) – MindLuster  
 - Network Defense Essentials (**NDE**) – EC-Council  
 - Digital Forensics Essentials – EC-Council  
@@ -55,13 +55,13 @@ This portfolio presents my professional work and personal accomplishments in an 
 
 ---
 
-## 🧠 Skills
+## Skills
 **Core Areas:**  
 Penetration Testing • Ethical Hacking • Network Security • Endpoint Protection • SIEM • Python Automation • Digital Forensics • Threat Intelligence • Malware Analysis • Cloud Security
 
 ---
 
-## 📫 Contact
+## Contact
 📧 **Email:** [mutheegrishon18@gmail.com](mailto:mutheegrishon18@gmail.com)  
 🌍 **Portfolio:** [grishonmuthee.github.io](https://grishonmuthee.github.io)  
 💼 **GitHub:** [github.com/grishonmuthee](https://github.com/grishonmuthee)  
@@ -69,7 +69,7 @@ Penetration Testing • Ethical Hacking • Network Security • Endpoint Protec
 
 ---
 
-## 📜 License
+## License
 This project is open-source under the [MIT License](LICENSE).
 
 ---
