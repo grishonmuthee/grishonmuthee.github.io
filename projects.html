@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects | Grishon Muthee</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style.css">
   <style>
     body {
       font-family: system-ui, sans-serif;
+      margin: 0;
       background: #f9f9f9;
       color: #333;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
     }
 
-    /* HEADER (identical to index.html) */
-         header {
+    header {
       background: #111;
       color: #fff;
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     header h1 {
@@ -42,81 +41,34 @@
     nav a {
       color: #fff;
       text-decoration: none;
+      transition: color 0.3s;
     }
 
-    nav a:hover {
+    nav a:hover,
+    nav a.active {
       color: #00c6ff;
     }
 
-    /* MAIN */
     main {
-      flex: 1;
-      max-width: 1000px;
-      width: 100%;
-      margin: 0 auto;
       padding: 3rem 2rem;
-      box-sizing: border-box;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
-    h2 {
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 2rem;
-    }
-
-    /* PROJECT CARDS */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .project-card {
+    .project {
       background: white;
-      border-radius: 12px;
       padding: 1.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.2s, box-shadow 0.2s;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      margin-bottom: 1.5rem;
     }
 
-    .project-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-    }
-
-    .project-card h3 {
-      margin: 0 0 0.5rem 0;
-      color: #0072ff;
-    }
-
-    .project-card p {
-      color: #555;
-      font-size: 0.95rem;
-    }
-
-    /* FOOTER */
     footer {
       background: #111;
       color: #aaa;
       text-align: center;
       padding: 1.5rem;
-      margin-top: auto;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-      }
-
-      nav ul {
-        flex-wrap: wrap;
-      }
-
-      main {
-        padding: 2rem 1rem;
-      }
+      margin-top: 2rem;
     }
   </style>
 </head>
@@ -135,39 +87,26 @@
   </header>
 
   <main>
-    <h2>My Projects</h2>
-    <div class="projects-grid" id="projects"></div>
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>Vulnerability Scanner</h3>
+      <p>Custom-built tool for automated network vulnerability assessment using Python and Nmap API.</p>
+    </div>
+
+    <div class="project">
+      <h3>SIEM Log Analysis Dashboard</h3>
+      <p>Developed a dashboard that visualizes SIEM data using ELK stack and automates threat detection patterns.</p>
+    </div>
+
+    <div class="project">
+      <h3>CTF Challenge Platform</h3>
+      <p>Designed challenges and hosted internal Capture The Flag competitions for cybersecurity skill testing.</p>
+    </div>
   </main>
 
   <footer>
-    <p>© 2025 Grishon Muthee | 
-      <a href="https://github.com/grishonmuthee" target="_blank" style="color:#00c6ff;">GitHub</a>
-    </p>
+    <p>© 2025 Grishon Muthee | <a href="https://github.com/grishonmuthee" target="_blank" style="color:#00c6ff;">GitHub</a></p>
   </footer>
-
-  <script>
-    // Fetch and display GitHub repositories dynamically
-    fetch('https://api.github.com/users/grishonmuthee/repos')
-      .then(res => res.json())
-      .then(data => {
-        const container = document.getElementById('projects');
-        data
-          .filter(repo => !repo.fork)
-          .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
-          .forEach(repo => {
-            const div = document.createElement('div');
-            div.className = 'project-card';
-            div.innerHTML = `
-              <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
-              <p>${repo.description || 'No description available.'}</p>
-            `;
-            container.appendChild(div);
-          });
-      })
-      .catch(err => {
-        document.getElementById('projects').innerHTML = '<p>Unable to load projects right now.</p>';
-        console.error(err);
-      });
-  </script>
 </body>
 </html>
