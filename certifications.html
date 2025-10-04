@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certifications | Grishon Muthee</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #111;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1rem;
+    }
+
+    main {
+      flex: 1;
+      padding: 3rem 2rem;
+      max-width: 800px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .cert-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    .cert-card h3 {
+      margin: 0 0 0.5rem 0;
+      color: #0072ff;
+    }
+
+    .cert-card p {
+      margin: 0.3rem 0;
+      color: #555;
+    }
+
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Grishon Muthee</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="certifications.html">Certifications</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>My Certifications</h2>
+
+    <div class="cert-card">
+      <h3>
+        <a href="https://www.coursera.org/account/accomplishments/certificate/example1" target="_blank">
+          Google Data Analytics Professional Certificate
+        </a>
+      </h3>
+      <p><strong>Issued by:</strong> Coursera</p>
+      <p><strong>Year:</strong> 2024</p>
+    </div>
+
+    <div class="cert-card">
+      <h3>
+        <a href="https://www.udemy.com/certificate/example2" target="_blank">
+          The Complete JavaScript Developer Bootcamp
+        </a>
+      </h3>
+      <p><strong>Issued by:</strong> Udemy</p>
+      <p><strong>Year:</strong> 2023</p>
+    </div>
+
+    <div class="cert-card">
+      <h3>
+        <a href="https://www.credly.com/badges/example3" target="_blank">
+          AWS Certified Cloud Practitioner
+        </a>
+      </h3>
+      <p><strong>Issued by:</strong> Amazon Web Services</p>
+      <p><strong>Year:</strong> 2022</p>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Grishon Muthee</p>
+  </footer>
+</body>
+</html>
