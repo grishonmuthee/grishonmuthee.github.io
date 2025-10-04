@@ -1,71 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Certifications | Grishon Muthee</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style.css">
   <style>
     body {
       font-family: system-ui, sans-serif;
+      margin: 0;
       background: #f9f9f9;
       color: #333;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
     }
 
     header {
       background: #111;
-      color: white;
+      color: #fff;
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
-    header a {
-      color: white;
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: #fff;
       text-decoration: none;
-      margin-left: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #00c6ff;
     }
 
     main {
-      flex: 1;
       padding: 3rem 2rem;
-      max-width: 800px;
-      width: 100%;
+      max-width: 900px;
       margin: 0 auto;
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 2rem;
     }
 
     .cert-card {
       background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .cert-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      margin-bottom: 1rem;
     }
 
     .cert-card h3 {
-      margin: 0 0 0.5rem 0;
       color: #0072ff;
-    }
-
-    .cert-card p {
-      margin: 0.3rem 0;
-      color: #555;
+      margin-bottom: 0.5rem;
     }
 
     footer {
@@ -73,12 +73,7 @@
       color: #aaa;
       text-align: center;
       padding: 1.5rem;
-    }
-
-    @media (max-width: 600px) {
-      main {
-        padding: 2rem 1rem;
-      }
+      margin-top: 2rem;
     }
   </style>
 </head>
@@ -86,51 +81,54 @@
   <header>
     <h1>Grishon Muthee</h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="about.html">About</a>
-      <a href="certifications.html">Certifications</a>
-      <a href="contact.html">Contact</a>      
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="certifications.html" class="active">Certifications</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
   <main>
-    <h2>My Certifications</h2>
+    <h2>Certifications</h2>
 
     <div class="cert-card">
-      <h3>
-        <a href="https://www.coursera.org/account/accomplishments/certificate/example1" target="_blank">
-          Google Data Analytics Professional Certificate
-        </a>
-      </h3>
-      <p><strong>Issued by:</strong> Coursera</p>
-      <p><strong>Year:</strong> 2024</p>
+      <h3>Systems Security Certified Practitioner (SSCP)</h3>
+      <p>MindLuster — Comprehensive foundation in access controls, cryptography, and security operations.</p>
     </div>
 
     <div class="cert-card">
-      <h3>
-        <a href="https://www.udemy.com/certificate/example2" target="_blank">
-          The Complete JavaScript Developer Bootcamp
-        </a>
-      </h3>
-      <p><strong>Issued by:</strong> Udemy</p>
-      <p><strong>Year:</strong> 2023</p>
+      <h3>Network Defense Essentials (NDE)</h3>
+      <p>EC-Council — Core understanding of network defense, firewalls, and IDS configurations.</p>
     </div>
 
     <div class="cert-card">
-      <h3>
-        <a href="https://www.credly.com/badges/example3" target="_blank">
-          AWS Certified Cloud Practitioner
-        </a>
-      </h3>
-      <p><strong>Issued by:</strong> Amazon Web Services</p>
-      <p><strong>Year:</strong> 2022</p>
+      <h3>Digital Forensics Essentials</h3>
+      <p>EC-Council — Focus on evidence acquisition, analysis, and chain of custody principles.</p>
     </div>
 
+    <div class="cert-card">
+      <h3>Networking</h3>
+      <p>Cisco — Covered LAN/WAN technologies, routing, switching, and network troubleshooting.</p>
+    </div>
+
+    <div class="cert-card">
+      <h3>Ethical Hacking Essentials</h3>
+      <p>EC-Council — Practical ethical hacking and penetration testing methodologies.</p>
+    </div>
+
+    <div class="cert-card">
+      <h3>Junior Cybersecurity Analyst</h3>
+      <p>Cisco — Focused on SOC operations, threat detection, and response fundamentals.</p>
+    </div>
   </main>
 
   <footer>
-    <p>© 2025 Grishon Muthee</p>
+    <p>© 2025 Grishon Muthee | 
+      <a href="https://github.com/grishonmuthee" target="_blank" style="color:#00c6ff;">GitHub</a>
+    </p>
   </footer>
 </body>
 </html>
