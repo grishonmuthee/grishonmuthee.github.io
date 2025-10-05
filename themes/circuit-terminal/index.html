@@ -223,12 +223,50 @@
   <!-- ============================== -->
   <!--         CONTACT SECTION        -->
   <!-- ============================== -->
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <p> Email: <a href="mailto:grishonmuthee54@gmail.com">grishonmuthee54@gmail.com</a></p>
-    <p> LinkedIn: <a href="https://linkedin.com/in/grishonmuthee" target="_blank">linkedin.com/in/grishonmuthee</a></p>
-    <p> GitHub: <a href="https://github.com/grishonmuthee54" target="_blank">github.com/grishonmuthee54</a></p>
-  </section>
+<section id="contact" class="section contact-section">
+  <h2>Contact</h2>
+  <p class="intro-text">
+    Let’s connect! Whether it’s collaboration, consulting, or cybersecurity research — 
+    I’d love to hear from you.
+  </p>
+
+  <div class="contact-container">
+    <!-- === LEFT: Contact Info === -->
+    <div class="contact-info">
+      <h3>Get In Touch</h3>
+      <p><strong>Email:</strong> <a href="mailto:grishonmuthee54@gmail.com">grishonmuthee54@gmail.com</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/grishonmuthee" target="_blank">linkedin.com/in/grishonmuthee</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/grishonmuthee54" target="_blank">github.com/grishonmuthee54</a></p>
+    </div>
+
+    <!-- === RIGHT: Contact Form === -->
+    <form class="contact-form" action="#" method="post">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="send-btn">Send Message</button>
+    </form>
+  </div>
+
+  <!-- SVG Circuit Lines for Contact Section -->
+  <div class="circuit-traces">
+    <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+      <line x1="200" y1="150" x2="1000" y2="150" class="trace"/>
+      <line x1="200" y1="300" x2="1000" y2="300" class="trace"/>
+      <line x1="200" y1="450" x2="1000" y2="450" class="trace"/>
+    </svg>
+  </div>
+</section>
+
 
   <!-- ============================== -->
   <!--             FOOTER             -->
