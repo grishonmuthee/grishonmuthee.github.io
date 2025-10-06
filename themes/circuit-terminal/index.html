@@ -364,7 +364,7 @@
     async function loadProjects() {
       const container = document.getElementById("project-list");
       try {
-        const res = await fetch("https://api.github.com/users/mutheegrishon/repos?sort=updated");
+        const res = await fetch("https://api.github.com/users/grishonmuthee/repos?sort=updated");
         const repos = await res.json();
         container.innerHTML = "";
         repos.forEach(repo => {
