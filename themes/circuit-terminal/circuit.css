@@ -445,7 +445,6 @@ footer {
 
 
 /* === CONTACT SECTION === */
-/* === CONTACT SECTION === */
 .contact-section {
   padding: 4rem 2rem;
   max-width: 1100px;
@@ -600,6 +599,127 @@ footer {
     align-items: stretch;
   }
   .contact-info, .contact-form {
+    width: 100%;
+  }
+}
+
+/* === FOOTER BASE SECTION === */
+.footer-section {
+  background: rgba(0, 10, 15, 0.95);
+  border-top: 2px solid #00ffc8;
+  padding: 3rem 2rem 1rem 2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 255, 200, 0.15);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto 2rem auto;
+  color: #ffffff;
+}
+
+/* === GREEN TITLE CLASS === */
+.footer-green {
+  color: #00ff88;
+  text-shadow: 0 0 10px #00ff88, 0 0 20px rgba(0, 255, 136, 0.5);
+}
+
+/* === ABOUT === */
+.footer-about {
+  flex: 1.2;
+  min-width: 250px;
+  text-align: left;
+}
+
+.footer-about h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.footer-about p {
+  color: #e0e0e0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* === LINKS & CONTACT === */
+.footer-links,
+.footer-contact {
+  flex: 1;
+  min-width: 220px;
+  text-align: left;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+/* === VERTICAL BUTTONS (WHITE, LEFT-ALIGNED, NO UNDERLINES) === */
+.footer-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: flex-start;
+}
+
+.footer-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 0.3rem 0;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #00ffc8;
+  text-shadow: 0 0 10px #00ffc8;
+}
+
+/* === COPYRIGHT === */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 1rem;
+  color: #d8d8d8;
+  font-size: 0.9rem;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+/* === SUBTLE PULSE BORDER EFFECT === */
+.footer-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-top: 2px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+  animation: footerPulse 6s ease-in-out infinite;
+}
+
+@keyframes footerPulse {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(0, 255, 136, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(0, 255, 136, 0.6);
+  }
+}
+
+/* === RESPONSIVE FOOTER === */
+@media (max-width: 850px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-about, .footer-links, .footer-contact {
     width: 100%;
   }
 }
