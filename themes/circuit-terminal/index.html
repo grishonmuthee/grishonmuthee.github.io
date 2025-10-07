@@ -336,7 +336,7 @@
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
     (function() {
-      emailjs.init("YOUR_PUBLIC_KEY_HERE"); // Replace with your EmailJS public key
+      emailjs.init("054xXynwG5VHLAHEq"); // Replace with your EmailJS public key
     })();
 
     document.getElementById("contact-form").addEventListener("submit", function(event) {
@@ -346,14 +346,14 @@
       status.textContent = "Sending message...";
       status.style.color = "#00e6b8";
 
-      emailjs.sendForm("YOUR_SERVICE_ID_HERE", "YOUR_TEMPLATE_ID_HERE", this)
+      emailjs.sendForm("service_2quqlc4", "template_8uj7x6l", this)
         .then(() => {
-          status.textContent = "✅ Message sent successfully!";
+          status.textContent = " Message sent successfully!";
           status.style.color = "#00ffae";
           this.reset();
         }, (error) => {
           console.error("EmailJS Error:", error);
-          status.textContent = "❌ Failed to send message. Try again later.";
+          status.textContent = " Failed to send message. Try again later.";
           status.style.color = "#ff6666";
         });
     });
