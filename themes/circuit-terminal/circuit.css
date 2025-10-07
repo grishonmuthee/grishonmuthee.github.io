@@ -119,8 +119,9 @@ footer {
 #about h2 {
   text-align: center;
   color: #00e6b8;
-  font-size: 2rem;
-  margin-bottom: 2rem;
+  font-size: 2.4rem;
+  margin-bottom: 2.5rem;
+  text-shadow: 0 0 8px rgba(0, 230, 184, 0.7);
 }
 
 #about .intro-text {
@@ -131,17 +132,21 @@ footer {
   color: #c3fff5;
 }
 
+/* --- Section Headings (Experience, Education, Skills) --- */
+.about-section h3 {
+  color: #00e6b8;
+  border-bottom: 1px solid #00e6b8;
+  padding-bottom: 0.6rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  text-shadow: 0 0 6px rgba(0, 230, 184, 0.5);
+}
+
 .about-section {
   margin-bottom: 3rem;
 }
 
-.about-section h3 {
-  color: #00e6b8;
-  border-bottom: 1px solid #00e6b8;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-}
-
+/* --- Cards (Experience, Education, Skills) --- */
 .card {
   background: rgba(0, 25, 25, 0.7);
   border: 1px solid #00e6b8;
@@ -166,39 +171,88 @@ footer {
   color: #00c2a8;
 }
 
-.card ul {
+/* === SKILLS & TECHNOLOGIES SECTION === */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+/* --- Sub-skill Categories (Programming, DevOps, etc.) --- */
+.skill-card {
+  background: rgba(0, 20, 20, 0.85);
+  border: 1px solid #00e6b8;
+  border-radius: 12px;
+  padding: 1.3rem;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0, 230, 184, 0.15);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  background: linear-gradient(120deg, #00ff88, transparent, #00c6ff, transparent);
+  z-index: -1;
+  border-radius: 12px;
+  animation: skillGlow 6s linear infinite;
+  opacity: 0.4;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+}
+
+/* --- Sub-Skill Category Titles --- */
+.skill-card h4 {
+  color: #00e6b8;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  text-shadow: 0 0 8px rgba(0, 230, 184, 0.6);
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* --- Individual Skills --- */
+.skill-card ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-.card ul li::before {
-  content: "▹ ";
-  color: #00e6b8;
-}
-
-.skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-}
-
-.skill {
-  background: rgba(0, 230, 184, 0.15);
-  border: 1px solid #00e6b8;
-  border-radius: 8px;
-  padding: 0.5rem 1rem;
+.skill-card li {
   font-size: 0.95rem;
-  color: #c3fff5;
-  transition: all 0.2s ease-in-out;
+  margin-bottom: 0.4rem;
+  color: #bfffd0;
+  text-align: center;
+  transition: color 0.3s ease;
 }
 
-.skill:hover {
-  background: rgba(0, 230, 184, 0.3);
-  box-shadow: 0 0 10px rgba(0, 230, 184, 0.5);
+.skill-card li:hover {
+  color: #00ff88;
 }
+
+/* --- Glow Animation --- */
+@keyframes skillGlow {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 400% 0;
+  }
+}
+
 
 /* === PROJECTS GRID (Cyber Card Theme) === */
-
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
