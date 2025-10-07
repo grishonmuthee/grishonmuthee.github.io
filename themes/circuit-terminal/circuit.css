@@ -724,5 +724,15 @@ footer {
   }
 }
 
+/* === ADJUST SPACING BETWEEN HERO AND ABOUT === */
+#home {
+  min-height: 80vh; /* was 100vh, this brings next section closer */
+  padding-top: 120px; /* keeps it centered while header overlaps slightly */
+  padding-bottom: 2rem; /* tighten spacing */
+}
+
+#about {
+  margin-top: -40px; /* overlap slightly to remove big gap */
+}
 
 
