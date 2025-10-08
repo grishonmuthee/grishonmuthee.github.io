@@ -411,41 +411,54 @@
   <!--             SCRIPTS            -->
   <!-- ============================== -->
   <script>
-    // === Terminal Typing Effect ===
-    const lines = [
-      "$ Initializing system...",
-      "$ Loading system environment variables...",
-      "$ Establishing network interface (eth0)...",
-      "$ Resolving DNS...",
-      "$ Connecting to remote server [OK]",
-      "$ Initializing firewall and intrusion detection modules...",
-      "$ Performing SSL handshake...",
-      "$ Decrypting authentication token...",
-      "$ Loading UI components...",
-      "$ Rendering portfolio interface...",
-      "$ Initializing cybersecurity modules...",
-      "$ System online.",
-      ">> Welcome",
-      ">> grishon@portolio ~ "
-    ];
-    let l = 0, c = 0;
-    const speed = 20;
-    const typed = document.getElementById("typed");
+  // === Realistic Dynamic Terminal Typing Effect ===
+  const lines = [
+    "$ Initializing system...",
+    "$ Loading system environment variables...",
+    "$ Establishing network interface (eth0)...",
+    "$ Resolving DNS...",
+    "$ Connecting to remote server [OK]",
+    "$ Initializing firewall and intrusion detection modules...",
+    "$ Performing SSL handshake...",
+    "$ Decrypting authentication token...",
+    "$ Loading UI components...",
+    "$ Rendering portfolio interface...",
+    "$ Initializing cybersecurity modules...",
+    "$ System online.",
+    ">> Welcome, Grishon Muthee Njenga",
+    ">> grishon@portfolio:~$ "
+  ];
 
-    function typeEffect() {
-      if (l < lines.length) {
-        if (c < lines[l].length) {
-          typed.innerHTML += lines[l][c];
-          c++;
-          setTimeout(typeEffect, speed);
-        } else {
-          typed.innerHTML += "<br>";
-          c = 0; l++;
-          setTimeout(typeEffect, 400);
-        }
+  let l = 0, c = 0;
+  const typed = document.getElementById("typed");
+
+  // Base speed range — will vary naturally
+  let speed = 40;
+
+  function getDynamicSpeed() {
+    if (l < 3) return 20 + Math.random() * 30; // startup logs → very fast
+    if (l < 8) return 40 + Math.random() * 60; // mid process → moderate
+    if (l < lines.length - 2) return 70 + Math.random() * 80; // slowing down
+    return 100 + Math.random() * 150; // final lines → dramatic pause
+  }
+
+  function typeEffect() {
+    if (l < lines.length) {
+      if (c < lines[l].length) {
+        typed.innerHTML += lines[l][c];
+        c++;
+        speed = getDynamicSpeed(); // adjust speed per character
+        setTimeout(typeEffect, speed);
+      } else {
+        typed.innerHTML += "<br>";
+        c = 0;
+        l++;
+        setTimeout(typeEffect, 300);
       }
     }
-    typeEffect();
+  }
+
+  typeEffect();
 
     // === Circuit Board Background ===
     const canvas = document.getElementById("circuit");
