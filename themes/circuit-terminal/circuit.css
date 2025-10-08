@@ -790,46 +790,35 @@ footer {
 }
 
 
-/* === HERO TEXT FLICKER EFFECT === */
-#home h2,
-#home p {
+/* === FLICKER EFFECT FOR NAME === */
+#home h2 {
   color: #ffffff;
   text-shadow: 0 0 8px rgba(0, 255, 180, 0.6);
-  animation: flicker 3s infinite;
+  animation: nameFlicker 20s infinite;
+  font-size: 2.0rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
 }
 
-/* Keyframes for subtle flickering (like fluorescent lights) */
-@keyframes flicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+/* Subtle terminal-like flicker effect */
+@keyframes nameFlicker {
+  0%, 18%, 20%, 22%, 25%, 53%, 55%, 100% {
     opacity: 1;
     text-shadow: 0 0 8px rgba(0, 255, 180, 0.6),
                  0 0 15px rgba(0, 255, 180, 0.4),
                  0 0 25px rgba(0, 255, 180, 0.2);
   }
 
-  20%, 24%, 55% {
+  19%, 21%, 54% {
     opacity: 0.4;
     text-shadow: none;
   }
 
-  22% {
-    opacity: 0.8;
-    text-shadow: 0 0 5px rgba(0, 255, 180, 0.4);
+  23% {
+    opacity: 0.7;
+    text-shadow: 0 0 4px rgba(0, 255, 180, 0.3);
   }
-}
-
-/* Optional: stronger emphasis for the name */
-#home h2 {
-  font-size: 2.8rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  animation-delay: 0.2s;
-}
-
-#home p {
-  font-size: 1.3rem;
-  margin-top: 0.5rem;
-  animation-delay: 1s;
 }
 
 
