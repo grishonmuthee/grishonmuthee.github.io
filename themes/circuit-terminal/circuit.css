@@ -789,4 +789,11 @@ footer {
   margin-top: -40px; /* overlap slightly to remove big gap */
 }
 
+/* === HOME SECTION TEXT COLOR FIX === */
+#home h2,
+#home p {
+  color: #ffffff !important;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
 
