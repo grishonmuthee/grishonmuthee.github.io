@@ -789,11 +789,47 @@ footer {
   margin-top: -40px; /* overlap slightly to remove big gap */
 }
 
-/* === HOME SECTION TEXT COLOR FIX === */
+
+/* === HERO TEXT FLICKER EFFECT === */
 #home h2,
 #home p {
-  color: #ffffff !important;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(0, 255, 180, 0.6);
+  animation: flicker 3s infinite;
+}
+
+/* Keyframes for subtle flickering (like fluorescent lights) */
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 8px rgba(0, 255, 180, 0.6),
+                 0 0 15px rgba(0, 255, 180, 0.4),
+                 0 0 25px rgba(0, 255, 180, 0.2);
+  }
+
+  20%, 24%, 55% {
+    opacity: 0.4;
+    text-shadow: none;
+  }
+
+  22% {
+    opacity: 0.8;
+    text-shadow: 0 0 5px rgba(0, 255, 180, 0.4);
+  }
+}
+
+/* Optional: stronger emphasis for the name */
+#home h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  animation-delay: 0.2s;
+}
+
+#home p {
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+  animation-delay: 1s;
 }
 
 
