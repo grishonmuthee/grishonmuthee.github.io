@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grishon Muthee | Cybersecurity Portfolio</title>
+  <link rel="stylesheet" href="circuit.css" />
+</head>
+<body>
+  <!-- === Animated Circuit Background === -->
+  <canvas id="circuit"></canvas>
+
+<!-- ============================== -->
+<!--           HEADER               -->
+<!-- ============================== -->
+<header>
+    <div class="nav-left">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <h1>Grishon Muthee</h1>
+    </div>
+ </header>
+
+  <!-- ============================== -->
+  <!--           HOME SECTION         -->
+  <!-- ============================== -->
+  <section id="home" class="section">
+    <div id="terminal">
+      <div id="console">
+        <span id="typed"></span><span class="cursor"></span>
+      </div>
+    </div>
+    <h2>Grishon Muthee Njenga</h2>
+    <p>Cybersecurity Specialist | Ethical Hacker | Engineer</p>
+  </section>
+
+<!-- ============================== -->
+<!--          ABOUT SECTION         -->
+<!-- ============================== -->
+<section id="about" class="section">
+  <h2>About Me</h2>
+  <p class="intro-text">
+    I’m <strong>Grishon Muthee</strong>, a Cybersecurity Specialist with an academic foundation in Engineering. My skill set encompasses Penetration Testing, Web Security, Linux, Windows Security, Python Programming Language, Network Technologies, Malware Analysis, SIEM, and more. I hold multiple certificates in various cybersecurity domains. Achieved distinction as a highly skilled Capture The Flag (CTF) solver, ranking within the top 5% globally on platforms including TryHackMe, PicoCTF, HackTheBox, and Root-me. My hands-on experience includes configuring and leveraging security tools, performing malware analysis, executing physical security assessments, and more.
+  </p>
+
+  <!-- EXPERIENCE -->
+  <div class="about-section">
+    <h3>Professional Experience</h3>
+
+    <div class="card">
+      <h4>Cyber Security Specialist — Levian Technologies</h4>
+      <p><em>Mar 2021 – Sep 2025</em></p>
+      <p>Led network monitoring, incident response, and penetration testing initiatives to identify and mitigate vulnerabilities across Linux and Windows systems.</p>
+    </div>
+
+    <div class="card">
+      <h4>Cyber Security Analyst — PhantomNet Security</h4>
+      <p><em>Dec 2019 – Feb 2021</em></p>
+      <p>Conducted security assessments, improved client security posture by 17%, and implemented SIEM-based monitoring solutions.</p>
+    </div>
+
+    <div class="card">
+      <h4>Junior Cybersecurity Consultant — TechSecure Innovations</h4>
+      <p><em>Jan 2019 – Dec 2019</em></p>
+      <p>Supported vulnerability assessments and firewall implementations, and contributed to incident response planning and training.</p>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="about-section">
+    <h3>Education</h3>
+    <div class="card">
+      <p><strong>Bachelor of Science in Aerospace Engineering</strong><br>
+      <em>Kenyatta University</em></p>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="about-section">
+    <h3>Skills & Technologies</h3>
+
+    <div class="skills-grid">
+      <!-- CyberSecurity -->
+      <div class="skill-card">
+        <h4>CyberSecurity</h4>
+        <ul>
+          <li>Ethical Hacking</li>
+          <li> Digital Forensics</li>
+          <li>Incident Response</li>
+          <li>Reverse Engineering</li>
+          <li>Networking</li>
+        </ul>
+      </div>
+
+      <!-- DevOps -->
+      <div class="skill-card">
+        <h4>DevOps</h4>
+        <ul>
+          <li>Docker</li>
+          <li>Kubernetes</li>
+          <li>GitHub Actions</li>
+          <li>Jenkins</li>
+          <li>Terraform</li>
+        </ul>
+      </div>
+
+      <!-- Security Tools -->
+      <div class="skill-card">
+        <h4>Security Tools</h4>
+        <ul>
+          <li>Nmap</li>
+          <li>Metasploit</li>
+          <li>Wireshark</li>
+          <li>Burp Suite</li>
+          <li>Splunk</li>
+        </ul>
+      </div>
+
+      <!-- Operating Systems -->
+      <div class="skill-card">
+        <h4>Operating Systems</h4>
+        <ul>
+          <li>Linux</li>
+          <li>Windows</li>
+          <li>macOS</li>
+          <li>Cloud (AWS / Azure)</li>
+          <li>Containers</li>
+        </ul>
+      </div>
+
+      <!-- Programming -->
+      <div class="skill-card">
+        <h4>Programming</h4>
+        <ul>
+          <li>Python</li>
+          <li>Shell</li>
+          <li>Javascript</li>
+          <li>C++</li>
+          <li>HTMl & CSS</li>
+        </ul>
+      </div>
+
+      <!-- Networking -->
+      <div class="skill-card">
+        <h4>Networking</h4>
+        <ul>
+          <li>Network Level Attacks</li>
+          <li>Cloud Computing</li>
+          <li>Social Engineering</li>
+          <li>TCP/IP</li>
+          <li>Network Protocols</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================== -->
+<!--          PROJECTS SECTION      -->
+<!-- ============================== -->
+<section id="projects" class="section">
+  <h2>Projects</h2>
+  <p>These are some of my GitHub projects:</p>
+
+  <!-- Projects Grid -->
+  <div class="projects-grid" id="project-list">
+    <p>Loading projects...</p>
+  </div>
+
+  <script>
+    // === Fetch and display GitHub projects as cards ===
+    fetch("https://api.github.com/users/grishonmuthee/repos")
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById("project-list");
+        container.innerHTML = "";
+        data
+          .filter(repo => !repo.fork)
+          .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
+          .forEach(repo => {
+            const div = document.createElement("div");
+            div.className = "project-card";
+            div.innerHTML = `
+              <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
+              <p>${repo.description || "No description available."}</p>
+            `;
+            container.appendChild(div);
+          });
+      })
+      .catch(err => {
+        document.getElementById("project-list").innerHTML =
+          "<p> Unable to load projects right now via Github API. Kindly wait a few seconds and reload page.</p>";
+        console.error(err);
+      });
+  </script>
+</section>
+
+  
+<!-- ============================== -->
+<!--       CERTIFICATIONS SECTION   -->
+<!-- ============================== -->
+<section id="certifications" class="section">
+  <h2>Certifications</h2>
+  <p class="intro-text">
+    Here are some of my professional cybersecurity certifications and achievements.
+  </p>
+
+  <div class="cert-grid">
+<!-- all the .cert-card items here -->
+    <div class="cert-card">
+      <h3>Systems Security Certified Practitioner (SSCP)</h3>
+      <p>Issued Aug 2023. Credential Id: 8731271542</p>
+      <a href="https://www.mindluster.com/student/certificate/8731271542" target="_blank">View Certificate</a>
+    </div>
+
+    <div class="cert-card">
+      <h3>Networking</h3>
+      <p>Cisco. Issued July 2023. Network Protocols. OSI Model</p>
+      <a href="https://www.credly.com/badges/e62d8e12-0b4a-4142-bb02-75c44e671593/linked_in_profile" target="_blank">View Certificate</a>
+    </div>
+
+    <div class="cert-card">
+      <h3>Digital Forensics Essentials (DFE)</h3>
+      <p>EC-Council. Issued Jul 2023. Credential ID: 233898</p>
+      <a href="https://codered.eccouncil.org/certificate/c9ae7766-4edb-4860-804c-c0008f4d1c20?" target="_blank">View Certificate</a>
+    </div>
+
+    <div class="cert-card">
+      <h3>EndPoint Security</h3>
+      <p>Cisco. Issued Jul 2023. Credential ID: 233898</p>
+      <a href="https://www.credly.com/badges/c6688edb-b33e-4c2f-a9be-34e5b133cc1f/linked_in_profile" target="_blank">View Certificate</a>
+    </div>
+
+    <div class="cert-card">
+      <h3>Ethical Hacking Essentials</h3>
+      <p>EC-Council. Issued Jul 2023. Credetial ID: 233178</p>
+      <a href="https://learn.eccouncil.org/certificate/1d9d99b5-7d53-4916-885d-25e013e9113c?" target="_blank">View Certificate</a>
+    </div>
+
+    <div class="cert-card">
+      <h3>Junior Cybersecurity Analyst</h3>
+      <p>Cisco. Issued Jul 2023. Penetration Testing & Information security.</p>
+      <a href="https://www.credly.com/badges/3dcedb2f-082d-43e8-9312-77eb1eb2618f/linked_in_profile" target="_blank">View Certificate</a>
+    </div>
+
+    <div class="cert-card">
+      <h3>Official ISC2 Certified in Cybersecurity (CC)</h3>
+      <p>Cisco. Issued Jul 2023. Network Security & Incident Response</p>
+      <a href="https://www.isc2.org/Landing/1MCC" target="_blank">View Certificate</a>
+    </div>
+
+    <div class="cert-card">
+      <h3>Malware Analysis Fundamentals</h3>
+      <p>EC-Council. Behavioral and static analysis of malicious software.</p>
+      <a href="" target="_blank">View Certificate</a>
+    </div>
+
+    <div class="cert-card">
+      <h3>CyberSecurity Career Path</h3>
+      <p>CyberTalents. Issued Jul 2023. Ethical Hacking. Reverse Engineering.</p>
+      <a href="https://cybertalents.com/learn/cybersecurity-beginner-career-path" target="_blank">View Details</a>
+    </div>
+
+  </div>
+
+  <!-- === GLOWING CIRCUIT TRACE NETWORK (fixed position) === -->
+  <div class="circuit-traces">
+    <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+      <line x1="100" y1="100" x2="1100" y2="100" class="trace"/>
+      <line x1="200" y1="300" x2="1000" y2="300" class="trace"/>
+      <line x1="600" y1="50" x2="600" y2="550" class="trace"/>
+      <line x1="300" y1="150" x2="300" y2="500" class="trace"/>
+      <line x1="900" y1="150" x2="900" y2="500" class="trace"/>
+    </svg>
+  </div>
+</section>
+  
+  <!-- ============================== -->
+  <!--         CONTACT SECTION        -->
+  <!-- ============================== -->
+<section id="contact" class="section contact-section">
+  <h2>Contact</h2>
+  <p class="intro-text">Let's connect. I’m always open to discussing cybersecurity consulting, collaborations, or career opportunities.</p>
+
+  <div class="contact-container">
+    <!-- LEFT SIDE: CONTACT INFO -->
+    <div class="contact-info">
+      <h3>Get in Touch</h3>
+      <p><strong>Email:</strong> <a href="mailto:mutheegrishon18@gmail.com">mutheegrishon18@gmail.com</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/grishon-muthee-4a686021b" target="_blank">https://linkedin.com/in/grishon-muthee-4a686021b</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/grishonmuthee" target="_blank">github.com/grishonmuthee</a></p>
+      <p><strong>Location:</strong> Nairobi, Kenya</p>
+    </div>
+
+    <!-- RIGHT SIDE: CONTACT FORM -->
+    <form id="contact-form" class="contact-form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="from_name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="from_email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <select id="subject" name="subject" required>
+          <option value="" disabled selected>Select a subject</option>
+          <option value="Consulting">Consulting</option>
+          <option value="Job Inquiry">Job Inquiry</option>
+          <option value="Project Collaboration">Project Collaboration</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="send-btn">Send Message</button>
+      <p id="form-status" class="form-status"></p>
+    </form>
+  </div>
+
+  <!-- EMAILJS SCRIPT -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("054xXynwG5VHLAHEq"); // Replace with your EmailJS public key
+    })();
+
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const status = document.getElementById("form-status");
+      status.textContent = "Sending message...";
+      status.style.color = "#00e6b8";
+
+      emailjs.sendForm("service_2quqlc4", "template_8uj7x6l", this)
+        .then(() => {
+          status.textContent = " Message sent successfully!";
+          status.style.color = "#00ffae";
+          this.reset();
+        }, (error) => {
+          console.error("EmailJS Error:", error);
+          status.textContent = " Failed to send message. Try again later.";
+          status.style.color = "#ff6666";
+        });
+    });
+  </script>
+</section>
+
+<!-- ============================== -->
+<!--           FOOTER               -->
+<!-- ============================== -->
+<footer class="footer-section">
+  <div class="footer-content">
+    
+    <!-- ABOUT -->
+    <div class="footer-about">
+      <h3 class="footer-green">Grishon Muthee</h3>
+      <p>
+        Cybersecurity Specialist passionate about securing digital infrastructures,
+        ethical hacking, and defensive engineering. I focus on resilience,
+        automation, and making technology safer for everyone.
+      </p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-links">
+      <h4 class="footer-green">Quick Links</h4>
+      <div class="footer-buttons">
+        <a href="#home" class="footer-link">Home</a>
+        <a href="#about" class="footer-link">About</a>
+        <a href="#projects" class="footer-link">Projects</a>
+        <a href="#certifications" class="footer-link">Certifications</a>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="footer-contact">
+      <h4 class="footer-green">Contact</h4>
+      <div class="footer-buttons">
+        <a href="mailto:mutheegrishon18@gmail.com" class="footer-link">Email</a>
+        <a href="https://github.com/grishonmuthee" target="_blank" class="footer-link">GitHub</a>
+        <a href="https://linkedin.com/in/grishon-muthee-4a686021b" target="_blank" class="footer-link">LinkedIn</a>
+        <a href="https://discord.gg/5jmHK6Hcya" target="_blank" class="footer-link">Discord</a>
+        <a href="https://t.me/seannjenga" target="_blank" class="footer-link">Telegram</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- COPYRIGHT -->
+  <div class="footer-bottom">
+    <p>© 2025 Grishon Muthee | All rights reserved | Cybersecurity Portfolio</p>
+  </div>
+</footer>
+
+
+  <!-- ============================== -->
+  <!--             SCRIPTS            -->
+  <!-- ============================== -->
+  <script>
+  // === Realistic Dynamic Terminal Typing Effect ===
+  const lines = [
+    "$ Initializing system...",
+    "$ Loading system environment variables...",
+    "$ Establishing network interface (eth0)...",
+    "$ Resolving DNS...",
+    "$ Connecting to remote server [OK]",
+    "$ Initializing firewall and intrusion detection modules...",
+    "$ Performing SSL handshake...",
+    "$ Decrypting authentication token...",
+    "$ Loading UI components...",
+    "$ Rendering portfolio interface...",
+    "$ Loading backend modules...",
+    "$ System online.",
+    ">> Welcome",
+    ">> grishon@portfolio:~$ "
+  ];
+
+  let l = 0, c = 0;
+  const typed = document.getElementById("typed");
+
+  // Base speed range — will vary naturally
+  let speed = 40;
+
+  function getDynamicSpeed() {
+    if (l < 3) return 20 + Math.random() * 30; // startup logs → very fast
+    if (l < 8) return 40 + Math.random() * 60; // mid process → moderate
+    if (l < lines.length - 2) return 70 + Math.random() * 80; // slowing down
+    return 100 + Math.random() * 150; // final lines → dramatic pause
+  }
+
+  function typeEffect() {
+    if (l < lines.length) {
+      if (c < lines[l].length) {
+        typed.innerHTML += lines[l][c];
+        c++;
+        speed = getDynamicSpeed(); // adjust speed per character
+        setTimeout(typeEffect, speed);
+      } else {
+        typed.innerHTML += "<br>";
+        c = 0;
+        l++;
+        setTimeout(typeEffect, 300);
+      }
+    }
+  }
+
+  typeEffect();
+
+    // === Circuit Board Background ===
+    const canvas = document.getElementById("circuit");
+    const ctx = canvas.getContext("2d");
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resize);
+    resize();
+
+    const nodes = [];
+    for (let i = 0; i < 100; i++) {
+      nodes.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        dx: (Math.random() - 0.5) * 0.5,
+        dy: (Math.random() - 0.5) * 0.5,
+      });
+    }
+
+    function draw() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.15)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      for (let i = 0; i < nodes.length; i++) {
+        let n1 = nodes[i];
+        n1.x += n1.dx;
+        n1.y += n1.dy;
+        if (n1.x < 0 || n1.x > canvas.width) n1.dx *= -1;
+        if (n1.y < 0 || n1.y > canvas.height) n1.dy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(n1.x, n1.y, 1.5, 0, Math.PI * 2);
+        ctx.fillStyle = "#00e6b8";
+        ctx.fill();
+
+        for (let j = i + 1; j < nodes.length; j++) {
+          let n2 = nodes[j];
+          const dist = Math.hypot(n1.x - n2.x, n1.y - n2.y);
+          if (dist < 120) {
+            ctx.strokeStyle = `rgba(0, 230, 184, ${1 - dist / 120})`;
+            ctx.lineWidth = 0.5;
+            ctx.beginPath();
+            ctx.moveTo(n1.x, n1.y);
+            ctx.lineTo(n2.x, n2.y);
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+    
+  </script>
+</body>
+</html>
