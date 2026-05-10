@@ -24,7 +24,7 @@ I rank in the **top 5% globally** on CTF platforms including **TryHackMe, PicoCT
 
 This portfolio presents my professional work and personal accomplishments in an elegant, responsive design.
 
-** Live Site:** [https://grishonmuthee.github.io](https://grishonmuthee.github.io)
+**Live Site:** [https://grishonmuthee.github.io](https://grishonmuthee.github.io)
 
 ###  Pages
 | Page | Description |
@@ -62,10 +62,10 @@ Penetration Testing • Ethical Hacking • Network Security • Endpoint Protec
 ---
 
 ## Contact
-📧 **Email:** [mutheegrishon18@gmail.com](mailto:mutheegrishon18@gmail.com)  
-🌍 **Portfolio:** [grishonmuthee.github.io](https://grishonmuthee.github.io)  
-💼 **GitHub:** [github.com/grishonmuthee](https://github.com/grishonmuthee)  
-📱 **Phone:** +254 748 033 318  
+**Email:** [mutheegrishon18@gmail.com](mailto:mutheegrishon18@gmail.com)  
+**Portfolio:** [grishonmuthee.github.io](https://grishonmuthee.github.io)  
+**GitHub:** [github.com/grishonmuthee](https://github.com/grishonmuthee)  
+**Phone:** +254 748 033 318  
 
 ---
 
