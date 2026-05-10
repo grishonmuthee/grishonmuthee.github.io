@@ -67,11 +67,4 @@ Penetration Testing • Ethical Hacking • Network Security • Endpoint Protec
 **GitHub:** [github.com/grishonmuthee](https://github.com/grishonmuthee)  
 **Phone:** +254 748 033 318  
 
----
-
-## License
-This project is open-source under the [MIT License](LICENSE).
-
----
-
 > *“Security is not a product, but a process.” – Bruce Schneier*
