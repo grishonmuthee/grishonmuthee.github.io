@@ -1,7 +1,7 @@
 #  Grishon Muthee | Cybersecurity Portfolio
 
 Welcome to my **personal portfolio website**, built to showcase my experience, skills, and achievements in **cybersecurity**.  
-The site is hosted with **GitHub Pages** at [https://grishonmuthee.github.io](https://grishonmuthee.github.io/portfolio).
+The site is hosted with **GitHub Pages** at [https://grishonmuthee.github.io/portfolio](https://grishonmuthee.github.io/portfolio).
 
 ---
 
