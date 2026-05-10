@@ -1,7 +1,7 @@
 #  Grishon Muthee | Cybersecurity Portfolio
 
 Welcome to my **personal portfolio website**, built to showcase my experience, skills, and achievements in **cybersecurity**.  
-The site is hosted with **GitHub Pages** at [https://grishonmuthee.github.io](https://grishonmuthee.github.io).
+The site is hosted with **GitHub Pages** at [https://grishonmuthee.github.io](https://grishonmuthee.github.io/portfolio).
 
 ---
 
@@ -24,7 +24,7 @@ I rank in the **top 5% globally** on CTF platforms including **TryHackMe, PicoCT
 
 This portfolio presents my professional work and personal accomplishments in an elegant, responsive design.
 
-**Live Site:** [https://grishonmuthee.github.io](https://grishonmuthee.github.io)
+**Live Site:** [https://grishonmuthee.github.io](https://grishonmuthee.github.io/portfolio)
 
 ###  Pages
 | Page | Description |
