@@ -412,6 +412,16 @@
 
       <button type="submit" class="send-btn">Send Message</button>
       <p id="form-status" class="form-status"></p>
+
+      <!-- Bot honeypot -->
+      <input 
+        type="text" 
+        id="bottchecker847" 
+        name="bottchecker847" 
+        class="honeypot"
+        tabindex="-1"
+        autocomplete="off"
+      />
     </form>
   </div>
 
@@ -424,6 +434,12 @@
 
     document.getElementById("contact-form").addEventListener("submit", function(event) {
       event.preventDefault();
+
+      // Honeypot check
+      if (document.getElementById("bottchecker847").value !== "") {
+        console.log("Bot detected.");
+        return;
+      }
 
       const status = document.getElementById("form-status");
       status.textContent = "Sending message...";
