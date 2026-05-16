@@ -619,9 +619,9 @@ footer {
 .send-btn {
   display: block;
   width: 100%;
-  background: linear-gradient(135deg, #00e6b8, #0072ff);
+  background: #00e6b8;
   border: none;
-  color: #fff;
+  color: #000;
   padding: 0.8rem 1rem;
   border-radius: 8px;
   cursor: pointer;
@@ -632,7 +632,7 @@ footer {
 }
 
 .send-btn:hover {
-  background: linear-gradient(135deg, #00ffc3, #00a7e0);
+  background: #00ffc3;
   box-shadow: 0 0 15px rgba(0, 255, 195, 0.6);
   transform: scale(1.02);
 }
