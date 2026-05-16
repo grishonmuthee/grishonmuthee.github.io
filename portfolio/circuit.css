@@ -410,8 +410,8 @@ footer {
 
 .cert-card a {
   display: inline-block;
-  background: linear-gradient(135deg, #00e6b8, #0072ff);
-  color: #fff;
+  background: #00e6b8;
+  color: #000;
   text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: 8px;
@@ -421,7 +421,7 @@ footer {
 }
 
 .cert-card a:hover {
-  background: linear-gradient(135deg, #00ffc3, #00a7e0);
+  background: #00ffc3;
   transform: scale(1.05);
 }
 
