@@ -732,45 +732,80 @@ footer {
   background: #00ffc3;
 }
 
-/* Badge Section */
-.badge-section h3,
-.writeups-section h3 {
+/* === PLATFORM ACHIEVEMENTS === */
+
+.badge-section h3 {
   color: #00e6b8;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   font-size: 1.6rem;
 }
 
+/* 2x2 layout */
 .badge-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-  gap: 1.5rem;
-  margin-bottom: 4rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto 4rem auto;
 }
 
-.badge-card {
-  background: rgba(0, 25, 25, 0.75);
-  border: 1px solid #00e6b8;
-  border-radius: 12px;
-  padding: 1.5rem;
+/* no boxes */
+.badge-item {
   text-align: center;
+}
+
+/* clickable title */
+.badge-item h4 {
+  margin-bottom: 0.6rem;
+  font-size: 1.35rem;
+}
+
+.badge-item h4 a {
+  color: #66fff5;
+  text-decoration: none;
   transition: 0.3s;
 }
 
-.badge-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 20px rgba(0,230,184,0.4);
-}
-
-.badge-card img {
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-  margin-bottom: 1rem;
-}
-
-.badge-card p {
+.badge-item h4 a:hover {
   color: white;
+  text-shadow: 0 0 10px #00e6b8;
+}
+
+/* description */
+.badge-item p {
+  color: #c3fff5;
+  font-size: 0.95rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+  min-height: 50px;
+}
+
+/* larger clickable images */
+.badge-item img {
+  width: 280px;
+  max-width: 100%;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease,
+              filter 0.3s ease;
+}
+
+.badge-item img:hover {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 18px rgba(0,230,184,0.6));
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .badge-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .badge-item img {
+    width: 220px;
+  }
 }
 
 /* Writeups */
