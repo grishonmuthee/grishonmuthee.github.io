@@ -665,29 +665,6 @@ footer {
   margin: 0 auto;
 }
 
-.ctf-stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  margin: 2rem 0 4rem;
-}
-
-.stat-card {
-  background: rgba(0,20,20,0.8);
-  border: 1px solid #00e6b8;
-  padding: 1.5rem;
-  border-radius: 12px;
-}
-
-.stat-card h3 {
-  color: #00e6b8;
-}
-
-.stat-card a {
-  color: white;
-  text-decoration: none;
-}
-
 /* badges */
 .badge-grid {
   display: grid;
