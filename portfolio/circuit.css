@@ -665,6 +665,15 @@ footer {
   margin: 0 auto;
 }
 
+#ctf .intro-text {
+  color: #c3fff5;
+  margin-bottom: 2rem;
+}
+
+.badge-item h4 {
+  margin-bottom: 0.7rem;
+}
+
 /* badges */
 .badge-grid {
   display: grid;
