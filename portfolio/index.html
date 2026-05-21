@@ -836,13 +836,47 @@ projectModal.onclick = function(e) {
 
 <!-- Hamburger Header -->
 <script>
-function toggleMenu() {
-  document.getElementById("mobileMenu").classList.toggle("show");
-}
+  const mobileMenu = document.getElementById("mobileMenu");
+  const header = document.querySelector("header");
 
-function closeMenu() {
-  document.getElementById("mobileMenu").classList.remove("show");
-}
+  // hamburger toggle
+  function toggleMenu() {
+    mobileMenu.classList.toggle("show");
+  }
+
+  function closeMenu() {
+    mobileMenu.classList.remove("show");
+  }
+
+  // close menu when clicking anywhere outside
+  document.addEventListener("click", function(e) {
+    const hamburger = document.querySelector(".hamburger");
+
+    if (
+      !mobileMenu.contains(e.target) &&
+      !hamburger.contains(e.target)
+    ) {
+      closeMenu();
+    }
+  });
+
+  // hide/show header on scroll
+  let lastScroll = 0;
+
+  window.addEventListener("scroll", function () {
+    let currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll && currentScroll > 100) {
+      // scrolling down -> hide
+      header.classList.add("hide");
+      closeMenu();
+    } else {
+      // scrolling up -> show
+      header.classList.remove("hide");
+    }
+
+    lastScroll = currentScroll;
+  });
 </script>
   
 </body>
