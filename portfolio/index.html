@@ -547,8 +547,8 @@
       <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/grishon-muthee" target="_blank">https://linkedin.com/in/grishon-muthee</a></p>
       <p><strong>GitHub:</strong> <a href="https://github.com/grishonmuthee" target="_blank">github.com/grishonmuthee</a></p>
       <p>
-        <strong>Status:</strong> Currently open to job opportunities |
-        <span id="current-date"></span>
+        <strong>Currently open to job opportunities
+        <span id="current-date"></span> </strong>
       </p>
       <p><strong>Currently Open to Job Opportunities (May 2026)</strong></p>
     </div>
@@ -895,7 +895,7 @@ projectModal.onclick = function(e) {
   };
 
   document.getElementById("current-date").textContent =
-    today.toLocaleDateString("en-KE", options);
+    "[" + today.toLocaleDateString("en-KE", options) + "]";
 </script>
   
 </body>
