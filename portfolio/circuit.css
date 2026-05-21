@@ -692,6 +692,15 @@ footer {
   box-shadow: 0 0 10px rgba(0, 255, 195, 0.4);
 }
 
+.honeypot {
+  position: absolute !important;
+  left: -10000px !important;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 /* === SUBJECT DROPDOWN === */
 .contact-form select {
   appearance: none;
