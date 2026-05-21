@@ -77,18 +77,35 @@
 <!--           HEADER               -->
 <!-- ============================== -->
 <header>
-    <div class="nav-left">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#ctf">CTFs</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <div class="nav-right">
-      <h1>Grishon Muthee</h1>
-    </div>
- </header>
+  <div class="nav-right">
+    <h1>Grishon Muthee</h1>
+  </div>
+
+  <!-- desktop nav -->
+  <div class="nav-left">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#ctf">CTF</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- mobile hamburger -->
+  <div class="hamburger" onclick="toggleMenu()">
+    ☰
+  </div>
+
+  <!-- mobile dropdown -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" onclick="closeMenu()">Home</a>
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#projects" onclick="closeMenu()">Projects</a>
+    <a href="#ctf" onclick="closeMenu()">CTF</a>
+    <a href="#certifications" onclick="closeMenu()">Certifications</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+  </div>
+</header>
 
   <!-- ============================== -->
   <!--           HOME SECTION         -->
