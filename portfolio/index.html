@@ -250,39 +250,100 @@
 <!-- ============================== -->
 <section id="projects" class="section">
   <h2>Projects</h2>
-  <p>These are some of my projects, hosted on my Github:</p>
 
-  <!-- Projects Grid -->
-  <div class="projects-grid" id="project-list">
-    <p>Loading projects...</p>
+  <p class="intro-text">
+    Selected cybersecurity, automation, and security engineering projects demonstrating hands-on technical capability and real-world problem solving.
+  </p>
+
+  <div class="projects-grid">
+
+    <div class="project-item">
+      <h4>
+        <a href="https://github.com/grishonmuthee/project1" target="_blank">
+          SIEM Detection Lab
+        </a>
+      </h4>
+      <p>Built a Splunk-based SIEM environment for threat detection and log correlation.</p>
+      <img src="images/projects/project1.png" class="project-image" alt="SIEM Project">
+    </div>
+
+    <div class="project-item">
+      <h4>
+        <a href="https://github.com/grishonmuthee/project2" target="_blank">
+          Vulnerability Scanner
+        </a>
+      </h4>
+      <p>Python-based automated scanner for identifying common network vulnerabilities.</p>
+      <img src="images/projects/project2.png" class="project-image" alt="Scanner Project">
+    </div>
+
+    <div class="project-item">
+      <h4>
+        <a href="https://github.com/grishonmuthee/project3" target="_blank">
+          Malware Sandbox
+        </a>
+      </h4>
+      <p>Isolated environment for dynamic malware behavior analysis and reporting.</p>
+      <img src="images/projects/project3.png" class="project-image" alt="Malware Project">
+    </div>
+
+    <div class="project-item">
+      <h4>
+        <a href="https://github.com/grishonmuthee/project4" target="_blank">
+          SOC Dashboard
+        </a>
+      </h4>
+      <p>Centralized SOC monitoring dashboard built for security alert triage.</p>
+      <img src="images/projects/project4.png" class="project-image" alt="SOC Dashboard">
+    </div>
+
+    <div class="project-item">
+      <h4>
+        <a href="https://github.com/grishonmuthee/project5" target="_blank">
+          Linux Hardening Toolkit
+        </a>
+      </h4>
+      <p>Automated baseline hardening scripts for Linux servers.</p>
+      <img src="images/projects/project5.png" class="project-image" alt="Linux Hardening">
+    </div>
+
+    <div class="project-item">
+      <h4>
+        <a href="https://github.com/grishonmuthee/project6" target="_blank">
+          Web Pentest Toolkit
+        </a>
+      </h4>
+      <p>Custom tools for automated web application reconnaissance and testing.</p>
+      <img src="images/projects/project6.png" class="project-image" alt="Web Pentest">
+    </div>
+
+    <div class="project-item">
+      <h4>
+        <a href="https://github.com/grishonmuthee/project7" target="_blank">
+          Threat Intel Feed
+        </a>
+      </h4>
+      <p>Aggregates IOC feeds and enriches threat data automatically.</p>
+      <img src="images/projects/project7.png" class="project-image" alt="Threat Intel">
+    </div>
+
+    <div class="project-item">
+      <h4>
+        <a href="https://github.com/grishonmuthee/project8" target="_blank">
+          Incident Response Playbooks
+        </a>
+      </h4>
+      <p>Documented and automated response workflows for common cyber incidents.</p>
+      <img src="images/projects/project8.png" class="project-image" alt="IR Playbooks">
+    </div>
+
   </div>
 
-  <script>
-    // === Fetch and display GitHub projects as cards ===
-    fetch("https://api.github.com/users/grishonmuthee/repos")
-      .then(res => res.json())
-      .then(data => {
-        const container = document.getElementById("project-list");
-        container.innerHTML = "";
-        data
-          .filter(repo => !repo.fork)
-          .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
-          .forEach(repo => {
-            const div = document.createElement("div");
-            div.className = "project-card";
-            div.innerHTML = `
-              <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
-              <p>${repo.description || "No description available."}</p>
-            `;
-            container.appendChild(div);
-          });
-      })
-      .catch(err => {
-        document.getElementById("project-list").innerHTML =
-          "<p> Unable to load projects right now via Github API. Kindly wait a few seconds and reload page.</p>";
-        console.error(err);
-      });
-  </script>
+  <!-- modal -->
+  <div id="projectModal" class="modal">
+    <span class="close-project">&times;</span>
+    <img class="modal-content" id="projectModalImg">
+  </div>
 </section>
 
 
@@ -727,6 +788,33 @@
     }
   };
 </script>
+
+
+<!-- Projects Images Modal Lightbox -->
+<script>
+const projectModal = document.getElementById("projectModal");
+const projectModalImg = document.getElementById("projectModalImg");
+const projectImages = document.querySelectorAll(".project-image");
+const closeProject = document.querySelector(".close-project");
+
+projectImages.forEach(img => {
+  img.onclick = function () {
+    projectModal.style.display = "block";
+    projectModalImg.src = this.src;
+  };
+});
+
+closeProject.onclick = function () {
+  projectModal.style.display = "none";
+};
+
+projectModal.onclick = function(e) {
+  if (e.target === projectModal) {
+    projectModal.style.display = "none";
+  }
+};
+</script>
+
   
 </body>
 </html>
