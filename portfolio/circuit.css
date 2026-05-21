@@ -53,6 +53,67 @@ canvas {
   z-index: -1;
 }
 
+
+/* desktop header */
+.nav-left {
+  display: flex;
+  gap: 20px;
+}
+
+/* hide hamburger on desktop */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: #00e6b8;
+  cursor: pointer;
+}
+
+/* mobile menu hidden by default */
+.mobile-menu {
+  display: none;
+}
+
+/* ===== MOBILE Header ===== */
+@media (max-width: 768px) {
+
+  .nav-left {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .mobile-menu {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: rgba(0,0,0,0.95);
+    border: 1px solid #00e6b8;
+    border-radius: 10px;
+    padding: 1rem;
+    flex-direction: column;
+    min-width: 200px;
+    z-index: 999;
+  }
+
+  .mobile-menu.show {
+    display: flex;
+  }
+
+  .mobile-menu a {
+    color: #00e6b8;
+    text-decoration: none;
+    padding: 10px;
+    transition: 0.3s;
+  }
+
+  .mobile-menu a:hover {
+    color: #66fff5;
+    text-shadow: 0 0 8px #00e6b8;
+  }
+}
+
 /* === TERMINAL TYPING SECTION === */
 #terminal {
   padding-top: 100px;
