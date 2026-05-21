@@ -546,6 +546,10 @@
       <p><strong>Email:</strong> <a href="mailto:mutheegrishon18@gmail.com">mutheegrishon18@gmail.com</a></p>
       <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/grishon-muthee" target="_blank">https://linkedin.com/in/grishon-muthee</a></p>
       <p><strong>GitHub:</strong> <a href="https://github.com/grishonmuthee" target="_blank">github.com/grishonmuthee</a></p>
+      <p>
+        <strong>Status:</strong> Currently open to job opportunities |
+        <span id="current-date"></span>
+      </p>
       <p><strong>Currently Open to Job Opportunities (May 2026)</strong></p>
     </div>
 
@@ -877,6 +881,21 @@ projectModal.onclick = function(e) {
 
     lastScroll = currentScroll;
   });
+</script>
+
+<!-- Date JS -->
+<script>
+  const today = new Date();
+
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  };
+
+  document.getElementById("current-date").textContent =
+    today.toLocaleDateString("en-KE", options);
 </script>
   
 </body>
